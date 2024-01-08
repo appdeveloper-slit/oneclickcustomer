@@ -8,6 +8,7 @@ import 'package:one_click/home.dart';
 import 'package:one_click/my_request.dart';
 import 'package:one_click/values/colors.dart';
 import 'package:one_click/values/dimens.dart';
+import 'package:one_click/viewdocument.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timelines/timelines.dart';
 
@@ -259,7 +260,8 @@ class _RequestDetailsState extends State<RequestDetails> {
                     SizedBox(
                       height: Dim().d20,
                     ),
-                    if (data['driver_id'] != null && data['status_text'] != "Completed")
+                    if (data['driver_id'] != null &&
+                        data['status_text'] != "Completed")
                       Text(
                         "Driver Details",
                         style: Sty().mediumText.copyWith(
@@ -267,11 +269,13 @@ class _RequestDetailsState extends State<RequestDetails> {
                               fontSize: 18,
                             ),
                       ),
-                    if (data['driver_id'] != null && data['status_text'] != "Completed")
+                    if (data['driver_id'] != null &&
+                        data['status_text'] != "Completed")
                       SizedBox(
                         height: Dim().d16,
                       ),
-                    if (data['driver_id'] != null && data['status_text'] != "Completed")
+                    if (data['driver_id'] != null &&
+                        data['status_text'] != "Completed")
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -379,11 +383,13 @@ class _RequestDetailsState extends State<RequestDetails> {
                           ),
                         ),
                       ),
-                    if (data['driver_id'] != null && data['status_text'] != "Completed")
+                    if (data['driver_id'] != null &&
+                        data['status_text'] != "Completed")
                       SizedBox(
                         height: Dim().d16,
                       ),
-                    if (data['driver_id'] != null && data['status_text'] != "Completed")
+                    if (data['driver_id'] != null &&
+                        data['status_text'] != "Completed")
                       Text(
                         "OTP",
                         style: Sty().mediumText.copyWith(
@@ -391,11 +397,13 @@ class _RequestDetailsState extends State<RequestDetails> {
                               fontSize: 18,
                             ),
                       ),
-                    if (data['driver_id'] != null && data['status_text'] != "Completed")
+                    if (data['driver_id'] != null &&
+                        data['status_text'] != "Completed")
                       SizedBox(
                         height: Dim().d16,
                       ),
-                    if (data['driver_id'] != null && data['status_text'] != "Completed")
+                    if (data['driver_id'] != null &&
+                        data['status_text'] != "Completed")
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -575,7 +583,8 @@ class _RequestDetailsState extends State<RequestDetails> {
                     SizedBox(
                       height: Dim().d16,
                     ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       Text(
                         "Pickup Details",
                         style: Sty().mediumText.copyWith(
@@ -583,11 +592,13 @@ class _RequestDetailsState extends State<RequestDetails> {
                               fontSize: 18,
                             ),
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       SizedBox(
                         height: Dim().d16,
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       Card(
                         elevation: 0,
                         margin: EdgeInsets.zero,
@@ -666,7 +677,8 @@ class _RequestDetailsState extends State<RequestDetails> {
                     SizedBox(
                       height: Dim().d16,
                     ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       Text(
                         "Pickup Contact Details",
                         style: Sty().mediumText.copyWith(
@@ -674,11 +686,13 @@ class _RequestDetailsState extends State<RequestDetails> {
                               fontSize: 18,
                             ),
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       SizedBox(
                         height: Dim().d16,
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       Card(
                         elevation: 0,
                         margin: EdgeInsets.zero,
@@ -754,11 +768,13 @@ class _RequestDetailsState extends State<RequestDetails> {
                           ),
                         ),
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       SizedBox(
                         height: Dim().d16,
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       Text(
                         "Receiver Contact Details",
                         style: Sty().mediumText.copyWith(
@@ -766,11 +782,13 @@ class _RequestDetailsState extends State<RequestDetails> {
                               fontSize: 18,
                             ),
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       SizedBox(
                         height: Dim().d16,
                       ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       Card(
                         elevation: 0,
                         margin: EdgeInsets.zero,
@@ -1005,8 +1023,9 @@ class _RequestDetailsState extends State<RequestDetails> {
                           horizontal: 16.0,
                           vertical: 20.0,
                         ),
-                        child: Text('${data['goods_type'].toString()}',
-                            maxLines: 1,
+                        child: Text(
+                            '${data['goods_type'].toString().replaceAll('[', '').replaceAll(']', '').replaceAll('"', '').replaceAll('"', '')}',
+                            maxLines: null,
                             style: Sty().smallText.copyWith(
                                 color: Clr().primaryColor,
                                 fontWeight: FontWeight.w500)),
@@ -1074,14 +1093,139 @@ class _RequestDetailsState extends State<RequestDetails> {
                           ),
                           child: Column(
                             children: [
-                              SizedBox(
-                                height: Dim().d28,
-                              ),
+                              if (data['status_text'] == "Completed")
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: Dim().d12),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          child: Text(
+                                        'Ride Charge (${data['total_distance']}Km)',
+                                        style: Sty().smallText.copyWith(
+                                            // fontFamily: "MulshiSemi",
+                                            color: Clr().textcolor,
+                                            fontWeight: FontWeight.w400),
+                                      )),
+                                      Text(':'),
+                                      Expanded(
+                                          child: Wrap(
+                                        children: [
+                                          Align(
+                                              alignment: Alignment.centerRight,
+                                              child: Text(
+                                                '₹${data['ride_charge']}',
+                                                style: Sty().smallText.copyWith(
+                                                    // fontFamily: "MulshiSemi",
+                                                    color: Clr().textcolor,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              )),
+                                        ],
+                                      )),
+                                    ],
+                                  ),
+                                ),
+                              if (data['status_text'] == "Completed")
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: Dim().d12),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          child: Text(
+                                        'Loading Charge',
+                                        style: Sty().smallText.copyWith(
+                                            // fontFamily: "MulshiSemi",
+                                            color: Clr().textcolor,
+                                            fontWeight: FontWeight.w400),
+                                      )),
+                                      Text(':'),
+                                      Expanded(
+                                          child: Wrap(
+                                        children: [
+                                          Align(
+                                              alignment: Alignment.centerRight,
+                                              child: Text(
+                                                '₹${data['loading_charge']}',
+                                                style: Sty().smallText.copyWith(
+                                                    // fontFamily: "MulshiSemi",
+                                                    color: Clr().textcolor,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              )),
+                                        ],
+                                      )),
+                                    ],
+                                  ),
+                                ),
+                              if (data['status_text'] == "Completed")
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: Dim().d12),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          child: Text(
+                                        'Unloading Charge',
+                                        style: Sty().smallText.copyWith(
+                                            // fontFamily: "MulshiSemi",
+                                            color: Clr().textcolor,
+                                            fontWeight: FontWeight.w400),
+                                      )),
+                                      Text(':'),
+                                      Expanded(
+                                          child: Wrap(
+                                        children: [
+                                          Align(
+                                              alignment: Alignment.centerRight,
+                                              child: Text(
+                                                '₹${data['unloading_charge']}',
+                                                style: Sty().smallText.copyWith(
+                                                    // fontFamily: "MulshiSemi",
+                                                    color: Clr().textcolor,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              )),
+                                        ],
+                                      )),
+                                    ],
+                                  ),
+                                ),
+                              if (data['status_text'] == "Completed")
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: Dim().d12),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          child: Text(
+                                        'Your Km',
+                                        style: Sty().smallText.copyWith(
+                                            // fontFamily: "MulshiSemi",
+                                            color: Clr().textcolor,
+                                            fontWeight: FontWeight.w400),
+                                      )),
+                                      Text(':'),
+                                      Expanded(
+                                          child: Wrap(
+                                        children: [
+                                          Align(
+                                              alignment: Alignment.centerRight,
+                                              child: Text(
+                                                '${data['total_distance']}km',
+                                                style: Sty().smallText.copyWith(
+                                                    // fontFamily: "MulshiSemi",
+                                                    color: Clr().textcolor,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              )),
+                                        ],
+                                      )),
+                                    ],
+                                  ),
+                                ),
                               Row(
                                 children: [
                                   Expanded(
                                       child: Text(
-                                    'Amount Payable',
+                                    'Total Amount',
                                     style: Sty().smallText.copyWith(
                                         // fontFamily: "MulshiSemi",
                                         color: Clr().textcolor,
@@ -1094,7 +1238,7 @@ class _RequestDetailsState extends State<RequestDetails> {
                                       Align(
                                           alignment: Alignment.centerRight,
                                           child: Text(
-                                            '₹405(Est.)',
+                                            '₹${data['total_charge']}(Est.)',
                                             style: Sty().smallText.copyWith(
                                                 // fontFamily: "MulshiSemi",
                                                 color: Clr().textcolor,
@@ -1138,7 +1282,8 @@ class _RequestDetailsState extends State<RequestDetails> {
                     SizedBox(
                       height: Dim().d32,
                     ),
-                    if (data['status_text'] != "Cancelled" && data['status_text'] != 'Completed')
+                    if (data['status_text'] != "Cancelled" &&
+                        data['status_text'] != 'Completed')
                       Center(
                         child: SizedBox(
                           height: 50,
@@ -1165,16 +1310,24 @@ class _RequestDetailsState extends State<RequestDetails> {
                       ),
                     if (data['status_text'] == 'Completed')
                       Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: Dim().d40,vertical: Dim().d12),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: Dim().d40, vertical: Dim().d12),
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              STM().redirect2page(
+                                  ctx,
+                                  viewdocument(
+                                    img: data['document'],
+                                  ));
+                            },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Clr().primaryColor,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(Dim().d20)))),
                             child: Padding(
-                              padding:  EdgeInsets.symmetric(vertical: Dim().d12),
+                              padding:
+                                  EdgeInsets.symmetric(vertical: Dim().d12),
                               child: Center(
                                 child: Text("View Document",
                                     style: Sty()
@@ -1350,7 +1503,8 @@ class _RequestDetailsState extends State<RequestDetails> {
         break;
       case 'cancel_request':
         if (result['success']) {
-          STM().successDialogWithReplace(ctx, result['message'], MyRequest(point: 3));
+          STM().successDialogWithReplace(
+              ctx, result['message'], MyRequest(point: 3));
         } else {
           setState(() {
             STM().errorDialog(ctx, result['message']);

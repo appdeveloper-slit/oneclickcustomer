@@ -592,7 +592,7 @@ class STM {
       }
     } on DioError catch (e) {
       debugPrint(e.message);
-      e.message == 'Http status error [403]' ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
     }
     return result;
   }
@@ -616,7 +616,7 @@ class STM {
       }
     } on DioError catch (e) {
       debugPrint(e.message);
-      e.message == 'Http status error [403]' ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
     }
     return result;
   }
@@ -651,7 +651,7 @@ class STM {
       }
     } on DioError catch (e) {
       dialog.dismiss();
-      e.message == 'Http status error [403]' ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
     }
     return result;
   }
@@ -680,7 +680,7 @@ class STM {
         result = response.data;
       }
     } on DioError catch (e) {
-      e.message == 'Http status error [403]' ? STM().finishAffinity(ctx, Login()) :
+      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) :
       STM().errorDialog(ctx, e.message);
     }
     return result;
@@ -717,7 +717,7 @@ class STM {
     } on DioError catch (e) {
       debugPrint(e.message);
       dialog.dismiss();
-      e.message == 'Http status error [403]' ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
     }
     return result;
   }
@@ -749,7 +749,7 @@ class STM {
     } on DioError catch (e) {
       debugPrint(e.message);
       dialog.dismiss();
-      e.message == 'Http status error [403]' ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
     }
     return result;
   }
@@ -774,7 +774,7 @@ class STM {
       }
     } on DioError catch (e) {
       debugPrint(e.message);
-      e.message == 'Http status error [403]'  ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('405')  ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
     }
     return result;
   }

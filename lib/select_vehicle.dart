@@ -230,27 +230,27 @@ class _SelectVehicleState extends State<SelectVehicle> {
             SizedBox(
               height: Dim().d8,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: Dim().d20),
-              child: Row(
-                children: [
-                  Expanded(
-                      child: Text(
-                    'Select vehicle type',
-                    style: Sty().microText.copyWith(
-                        color: Clr().textGrey, fontWeight: FontWeight.w600),
-                  )),
-                  Text(':'),
-                  Expanded(
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            '${v['type']}',
-                            style: Sty().smallText,
-                          ))),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.only(left: Dim().d20),
+            //   child: Row(
+            //     children: [
+            //       Expanded(
+            //           child: Text(
+            //         'Select vehicle type',
+            //         style: Sty().microText.copyWith(
+            //             color: Clr().textGrey, fontWeight: FontWeight.w600),
+            //       )),
+            //       Text(':'),
+            //       Expanded(
+            //           child: Align(
+            //               alignment: Alignment.center,
+            //               child: Text(
+            //                 '${v['type']}',
+            //                 style: Sty().smallText,
+            //               ))),
+            //     ],
+            //   ),
+            // ),
             SizedBox(
               height: Dim().d12,
             ),
@@ -389,7 +389,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
         break;
       case 'add_request':
         if (result['success']) {
-          STM().successDialogWithReplace(ctx, result['message'], SearchDriver(id: result['data']['request_id'],));
+          STM().successDialogWithReplace(ctx, result['message'], SearchDriver(id: result['data']['request_id']['id'],));
         } else {
           setState(() {
             STM().errorDialog(ctx, result['message']);

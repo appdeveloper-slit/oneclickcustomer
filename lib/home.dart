@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:dio/dio.dart';
 import 'package:double_back_to_close/double_back_to_close.dart';
@@ -8,6 +9,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
+import 'package:multi_select_flutter/util/multi_select_item.dart';
+import 'package:multi_select_flutter/util/multi_select_list_type.dart';
 import 'package:one_click/login.dart';
 import 'package:one_click/values/colors.dart';
 import 'package:one_click/values/dimens.dart';
@@ -48,7 +52,7 @@ class HomeState extends State<Home> {
       StreamController<dynamic>.broadcast();
   String? sValue;
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey<ScaffoldState>();
-  var goodsValue;
+  List<dynamic> goodsValue = [];
 
   List<dynamic> goodsList = [];
   TimeOfDay selectedTimes = TimeOfDay.now();
@@ -748,56 +752,25 @@ class HomeState extends State<Home> {
                   SizedBox(
                     height: Dim().d24,
                   ),
-                  Container(
-                    height: 50,
-                    padding: EdgeInsets.only(
-                      left: Dim().d20,
-                      right: Dim().d12,
-                    ),
+                  MultiSelectDialogField(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border:
-                            Border.all(color: Clr().primaryColor, width: 0.5)),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<dynamic>(
-                        value: goodsValue,
-                        hint: Text(
-                          'Select your goods type',
-                          style: Sty().mediumText.copyWith(
-                                color: Clr().primaryColor,
-                              ),
-                        ),
-                        isExpanded: true,
-                        icon: Icon(Icons.keyboard_arrow_down,
-                            color: Clr().primaryColor),
-                        style: TextStyle(
-                          color: Clr().textcolor,
-                          fontSize: 16,
-                        ),
-                        onChanged: (value) {
-                          setState(() {
-                            goodsValue = value.toString();
-                            goodsTypVal != null;
-                            print('Selected Goods = ${goodsValue}');
-                            // position = v['variant'].indexWhere((e) =>
-                            // e['weight'].toString() == value.toString());
-                            // varientprice = v['variant'][position]
-                            // ['final_price']
-                            //     .toString();
-                          });
-                        },
-                        items: goodsList.map((v) {
-                          return DropdownMenuItem<dynamic>(
-                            value: v['name'].toString(),
-                            child: Text(
-                              v['name'].toString(),
-                              style: TextStyle(
-                                  color: Clr().textcolor, fontSize: 14),
-                            ),
-                          );
-                        }).toList(),
-                      ),
+                      border: Border.all(color: Clr().primaryColor,width: 0.5),
+                      borderRadius: BorderRadius.all(Radius.circular(Dim().d20))
                     ),
+                    listType: MultiSelectListType.LIST,
+                    title: Text('Select your goods type',style: Sty().mediumText.copyWith(color: Clr().primaryColor)),
+                    buttonText: Text('Select your goods type',style: Sty().mediumText.copyWith(color: Clr().primaryColor)),
+                    buttonIcon: Icon(Icons.keyboard_arrow_down),
+                    items: goodsList
+                        .map((e) => MultiSelectItem(e['name'], e['name']))
+                        .toList(),
+                    onConfirm: (v) {
+                      setState(() {
+                        goodsValue = v;
+                        goodsTypVal != null;
+                        print(v);
+                      });
+                    },
                   ),
                   goodsTypVal == null
                       ? Container()
@@ -1090,7 +1063,7 @@ class HomeState extends State<Home> {
               "time": timeCtrl.text,
               "pickup_name": picDetName,
               "pincode": address[0]['pincode'],
-              "goods_type": goodsValue,
+              "goods_type": json.encode(goodsValue.toString()),
               "pickup_mobile": picDetMob,
               "latitude": address[0]['lat'],
               "longitude": address[0]['lng'],
@@ -1135,7 +1108,7 @@ class HomeState extends State<Home> {
   }
 
   Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay? picked_s = await showTimePicker(
+    final TimeOfDay? pickedS = await showTimePicker(
       context: context,
       initialTime: selectedTimes,
       builder: (context, child) {
@@ -1146,16 +1119,16 @@ class HomeState extends State<Home> {
             child: child!);
       },
     );
-    if (picked_s != null && picked_s != selectedTimes) {
+    if (pickedS != null && pickedS != selectedTimes) {
       setState(() {
         timeCtrl = TextEditingController(
-            text: picked_s.minute.toString().length == 1
-                ? picked_s.hour.toString().length == 1
-                    ? '0${picked_s.hour}:0${picked_s.minute}:00'
-                    : '${picked_s.hour}:0${picked_s.minute}:00'
-                : picked_s.hour.toString().length == 1
-                    ? '0${picked_s.hour}:${picked_s.minute}:00'
-                    : '${picked_s.hour}:${picked_s.minute}:00');
+            text: pickedS.minute.toString().length == 1
+                ? pickedS.hour.toString().length == 1
+                    ? '0${pickedS.hour}:0${pickedS.minute}:00'
+                    : '${pickedS.hour}:0${pickedS.minute}:00'
+                : pickedS.hour.toString().length == 1
+                    ? '0${pickedS.hour}:${pickedS.minute}:00'
+                    : '${pickedS.hour}:${pickedS.minute}:00');
         print(timeCtrl.text);
       });
     }

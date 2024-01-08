@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:one_click/home.dart';
+import 'package:one_click/viewdocument.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'bottom_navigation/bottom_navigation.dart';
@@ -292,7 +293,7 @@ class _MyRequestState extends State<MyRequest> {
                                     width: Dim().d12,
                                   ),
                                   Text(
-                                    '5.4km',
+                                    '${list[index]['total_distance']}km',
                                     // p['date'],
                                     style: Sty()
                                         .smallText
@@ -311,7 +312,7 @@ class _MyRequestState extends State<MyRequest> {
                                     width: Dim().d12,
                                   ),
                                   Text(
-                                    '₹450(Est.)',
+                                    '₹${list[index]['total_charge']}(Est.)',
                                     // p['date'],
                                     style: Sty()
                                         .smallText
@@ -511,7 +512,9 @@ class _MyRequestState extends State<MyRequest> {
                           Padding(
                             padding:  EdgeInsets.symmetric(horizontal: Dim().d40,vertical: Dim().d12),
                             child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  STM().redirect2page(ctx, viewdocument(img: list[index]['document']));
+                                },
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Clr().primaryColor,
                                     shape: RoundedRectangleBorder(
