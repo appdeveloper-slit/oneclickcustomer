@@ -312,7 +312,7 @@ class _MyRequestState extends State<MyRequest> {
                                     width: Dim().d12,
                                   ),
                                   Text(
-                                    '₹${list[index]['total_charge']}(Est.)',
+                                    list[index]['type'] == 'Cash' ? '₹${list[index]['total_charge']}(Est.)' : 'Fixed',
                                     // p['date'],
                                     style: Sty()
                                         .smallText

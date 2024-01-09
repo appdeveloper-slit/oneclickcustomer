@@ -1093,7 +1093,7 @@ class _RequestDetailsState extends State<RequestDetails> {
                           ),
                           child: Column(
                             children: [
-                              if (data['status_text'] == "Completed")
+                              if (data['status_text'] == "Completed" && data['type'] == 'Cash')
                                 Padding(
                                   padding: EdgeInsets.only(bottom: Dim().d12),
                                   child: Row(
@@ -1125,7 +1125,7 @@ class _RequestDetailsState extends State<RequestDetails> {
                                     ],
                                   ),
                                 ),
-                              if (data['status_text'] == "Completed")
+                              if (data['status_text'] == "Completed"&& data['type'] == 'Cash')
                                 Padding(
                                   padding: EdgeInsets.only(bottom: Dim().d12),
                                   child: Row(
@@ -1157,7 +1157,7 @@ class _RequestDetailsState extends State<RequestDetails> {
                                     ],
                                   ),
                                 ),
-                              if (data['status_text'] == "Completed")
+                              if (data['status_text'] == "Completed"&& data['type'] == 'Cash')
                                 Padding(
                                   padding: EdgeInsets.only(bottom: Dim().d12),
                                   child: Row(
@@ -1189,7 +1189,7 @@ class _RequestDetailsState extends State<RequestDetails> {
                                     ],
                                   ),
                                 ),
-                              if (data['status_text'] == "Completed")
+                              if (data['status_text'] == "Completed"&& data['type'] == 'Cash')
                                 Padding(
                                   padding: EdgeInsets.only(bottom: Dim().d12),
                                   child: Row(
@@ -1238,7 +1238,7 @@ class _RequestDetailsState extends State<RequestDetails> {
                                       Align(
                                           alignment: Alignment.centerRight,
                                           child: Text(
-                                            '₹${data['total_charge']}(Est.)',
+                                            data['type'] == 'Cash' ? '₹${data['total_charge']}(Est.)' : 'Fixed',
                                             style: Sty().smallText.copyWith(
                                                 // fontFamily: "MulshiSemi",
                                                 color: Clr().textcolor,

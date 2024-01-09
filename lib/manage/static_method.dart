@@ -592,7 +592,14 @@ class STM {
       }
     } on DioError catch (e) {
       debugPrint(e.message);
-      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('403')
+          ? STM().finishAffinity(ctx, Login())
+          : STM().errorDialog(
+          ctx,
+          e.message.toString().contains('Socket') ||
+              e.message.toString().contains('HandleException')
+              ? 'Network is slow, please try again later. Apologies for the inconvenience.'
+              : e.message);
     }
     return result;
   }
@@ -616,7 +623,14 @@ class STM {
       }
     } on DioError catch (e) {
       debugPrint(e.message);
-      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('403')
+          ? STM().finishAffinity(ctx, Login())
+          : STM().errorDialog(
+          ctx,
+          e.message.toString().contains('Socket') ||
+              e.message.toString().contains('HandleException')
+              ? 'Network is slow, please try again later. Apologies for the inconvenience.'
+              : e.message);
     }
     return result;
   }
@@ -651,7 +665,14 @@ class STM {
       }
     } on DioError catch (e) {
       dialog.dismiss();
-      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('403')
+          ? STM().finishAffinity(ctx, Login())
+          : STM().errorDialog(
+          ctx,
+          e.message.toString().contains('Socket') ||
+              e.message.toString().contains('HandleException')
+              ? 'Network is slow, please try again later. Apologies for the inconvenience.'
+              : e.message);
     }
     return result;
   }
@@ -680,8 +701,14 @@ class STM {
         result = response.data;
       }
     } on DioError catch (e) {
-      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) :
-      STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('403')
+          ? STM().finishAffinity(ctx, Login())
+          : STM().errorDialog(
+          ctx,
+          e.message.toString().contains('Socket') ||
+              e.message.toString().contains('HandleException')
+              ? 'Network is slow, please try again later. Apologies for the inconvenience.'
+              : e.message);
     }
     return result;
   }
@@ -717,7 +744,14 @@ class STM {
     } on DioError catch (e) {
       debugPrint(e.message);
       dialog.dismiss();
-      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('403')
+          ? STM().finishAffinity(ctx, Login())
+          : STM().errorDialog(
+          ctx,
+          e.message.toString().contains('Socket') ||
+              e.message.toString().contains('HandleException')
+              ? 'Network is slow, please try again later. Apologies for the inconvenience.'
+              : e.message);
     }
     return result;
   }
@@ -749,7 +783,14 @@ class STM {
     } on DioError catch (e) {
       debugPrint(e.message);
       dialog.dismiss();
-      e.message.toString().contains('405') ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('403')
+          ? STM().finishAffinity(ctx, Login())
+          : STM().errorDialog(
+          ctx,
+          e.message.toString().contains('Socket') ||
+              e.message.toString().contains('HandleException')
+              ? 'Network is slow, please try again later. Apologies for the inconvenience.'
+              : e.message);
     }
     return result;
   }
@@ -774,7 +815,14 @@ class STM {
       }
     } on DioError catch (e) {
       debugPrint(e.message);
-      e.message.toString().contains('405')  ? STM().finishAffinity(ctx, Login()) : STM().errorDialog(ctx, e.message);
+      e.message.toString().contains('403')
+          ? STM().finishAffinity(ctx, Login())
+          : STM().errorDialog(
+              ctx,
+              e.message.toString().contains('Socket') ||
+                      e.message.toString().contains('HandleException')
+                  ? 'Network is slow, please try again later. Apologies for the inconvenience.'
+                  : e.message);
     }
     return result;
   }
@@ -845,10 +893,9 @@ class STM {
     return Color(int.parse(hexColor, radix: 16));
   }
 
-  Future<dynamic> getPincode({lat,lng})async{
-    List<Placemark> placemarks = await placemarkFromCoordinates(double.parse(lat.toString()), double.parse(lng.toString()));
+  Future<dynamic> getPincode({lat, lng}) async {
+    List<Placemark> placemarks = await placemarkFromCoordinates(
+        double.parse(lat.toString()), double.parse(lng.toString()));
     return placemarks[0].postalCode ?? placemarks[1].postalCode;
   }
-
-
 }
